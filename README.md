@@ -1,5 +1,5 @@
 restaura los paquetes nuget para que se ejecute
 
->.administrador de paquetes nuget
->.consola
->.restore dotnet
+1.administrador de paquetes nuget
+2.consola
+3.restore dotnet
