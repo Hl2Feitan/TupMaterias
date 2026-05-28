@@ -1,0 +1,39 @@
+@model List<TupMaterias.Models.Materia>
+
+@{
+    ViewData["Title"] = "Materias TUP";
+}
+
+<h2>Materias de la Tecnicatura</h2>
+
+@if (Model.Count == 0)
+{
+    <p>No hay materias cargadas en la base de datos.</p>
+}
+else
+{
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Materia</th>
+                <th>Profesor</th>
+                <th>Descripción</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var materia in Model)
+            {
+                <tr>
+                    <td>@materia.Nombre</td>
+                    <td>@materia.Profesor.Nombre</td>
+                    <td>@materia.Descripcion</td>
+                    <td>
+                        <a asp-action="Detalle" asp-route-id="@materia.Id"
+                           class="btn btn-sm btn-primary">Ver detalle</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
