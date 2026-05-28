@@ -1,6 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Agrega soporte para MVC (Controllers + Views)
+// Agrega soporte para MVC (controllers y views)
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -13,7 +13,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 app.UseRouting();
 
-// Ruta por defecto: va directo al listado de materias
+// Ruta por defecto, va directo al listado de materias
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Materias}/{action=Index}/{id?}");

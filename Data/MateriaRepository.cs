@@ -13,9 +13,7 @@ namespace TupMaterias.Data
             _connectionString = connectionString;
         }
 
-        // -------------------------------------------------------
         // Obtener todas las materias con su profesor
-        // -------------------------------------------------------
         public List<Materia> ObtenerTodas()
         {
             var materias = new List<Materia>();

@@ -13,14 +13,14 @@ namespace TupMaterias.Controllers
             _repo = new MateriaRepository(connStr);
         }
 
-        // GET: /Materias  → listado de todas las materias
+        // get: materias =>   listado de todas las materias
         public IActionResult Index()
         {
             var materias = _repo.ObtenerTodas();
             return View(materias);
         }
 
-        // GET: /Materias/Detalle/5  → detalle con alumnos
+        // get: /Materias/Detalle/5  => detalle con alumnos
         public IActionResult Detalle(int id)
         {
             var materia = _repo.ObtenerPorId(id);

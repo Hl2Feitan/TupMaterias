@@ -1,17 +1,13 @@
-﻿-- ============================================
--- TP-04: Base de datos para Materias TUP
--- Ejecutar en SQL Server Management Studio
--- o en el Query Editor de Visual Studio
--- ============================================
+﻿
 
--- 1. Crear la base de datos
+--Crear la base de datos
 CREATE DATABASE TupMaterias;
 GO
 
 USE TupMaterias;
 GO
 
--- 2. Tabla de Profesores
+--Tabla de Profesores
 CREATE TABLE Profesores (
     Id       INT PRIMARY KEY IDENTITY(1,1),
     Nombre   NVARCHAR(100) NOT NULL,
@@ -19,7 +15,7 @@ CREATE TABLE Profesores (
 );
 GO
 
--- 3. Tabla de Materias
+--Tabla de Materias
 CREATE TABLE Materias (
     Id          INT PRIMARY KEY IDENTITY(1,1),
     Nombre      NVARCHAR(100) NOT NULL,
@@ -29,7 +25,7 @@ CREATE TABLE Materias (
 );
 GO
 
--- 4. Tabla de Alumnos
+--Tabla de Alumnos
 CREATE TABLE Alumnos (
     Id      INT PRIMARY KEY IDENTITY(1,1),
     Nombre  NVARCHAR(100) NOT NULL,
@@ -37,7 +33,7 @@ CREATE TABLE Alumnos (
 );
 GO
 
--- 5. Tabla de Inscripciones (relacion N:M entre Alumnos y Materias)
+--Tabla de Inscripciones [relacion N:M entre Alumnos y Materias]
 CREATE TABLE Inscripciones (
     AlumnoId   INT NOT NULL,
     MateriaId  INT NOT NULL,
@@ -47,9 +43,7 @@ CREATE TABLE Inscripciones (
 );
 GO
 
--- ============================================
--- DATOS DE PRUEBA
--- ============================================
+--DATOS DE PRUEBA
 
 INSERT INTO Profesores (Nombre, Email) VALUES
     ('Carlos Gutierrez',  'cgutierrez@frre.utn.edu.ar'),
@@ -78,7 +72,7 @@ INSERT INTO Alumnos (Nombre, Legajo) VALUES
     ('Florencia Ruiz',     'TUP-008');
 GO
 
--- Inscripciones (varios alumnos en varias materias)
+--Inscripciones de varios alumnos en varias materias
 INSERT INTO Inscripciones (AlumnoId, MateriaId) VALUES
     (1, 1), (1, 2), (1, 4),
     (2, 1), (2, 3), (2, 4),
@@ -90,7 +84,7 @@ INSERT INTO Inscripciones (AlumnoId, MateriaId) VALUES
     (8, 1), (8, 3), (8, 6);
 GO
 
--- Verificacion: consulta rapida para confirmar que todo cargó bien
+--Verificacion
 SELECT m.Nombre AS Materia, p.Nombre AS Profesor,
        COUNT(i.AlumnoId) AS CantidadAlumnos
 FROM Materias m
