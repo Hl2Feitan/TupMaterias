@@ -56,7 +56,7 @@ INSERT INTO Materias (Nombre, Descripcion, ProfesorId) VALUES
     ('Programacion I',      'Introduccion a la programacion con C#',             1),
     ('Programacion II',     'Programacion orientada a objetos',                  1),
     ('Programacion III',    'Desarrollo web con ASP.NET MVC',                    2),
-    ('Base de Datos',       'Diseno y consultas en SQL Server',                  3),
+    ('Base de Datos',       'Diseño y consultas en SQL Server',                  3),
     ('Matematica',          'Algebra y analisis matematico',                     4),
     ('Laboratorio',         'Practicas de hardware y redes',                     3);
 GO
